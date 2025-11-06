@@ -1,23 +1,30 @@
 import Image from "next/image";
-import Link from "next/link";
-import Test from "./components/Test";
+import Nav from "./components/Nav";
+import Card from "./components/Card";
+import Filter from "./components/Filter";
+import Menu from "./components/Menu";
 
 export default function Home() {
   return (
-    <div className="">
-      <Link href="/detalje">
-        <h1>Til detalje side</h1>
-      </Link>
-      <Link href="/favorite">
-        <h1>Til favorite side</h1>
-      </Link>
-      <Test />
-      <Image
-        loading="eager"
-        src="https://placecats.com/neo/300/200"
-        width={300}
-        height={200}
-      />
+    <div className="bg-gray-600 shadow-[0_0_10px_black] grid grid-cols-[1fr_375px_1fr]">
+      <div className="[grid-column:2] w-[375px] h-[100vh] bg-white rounded-3xl overflow-hidden">
+        <Nav />
+        <Filter />
+        <div className="px-6 py-4 grid grid-cols-[1fr_1fr] gap-4">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <Menu />
+      </div>
     </div>
   );
 }
